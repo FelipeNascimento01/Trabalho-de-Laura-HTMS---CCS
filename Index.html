@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>By Cauã Dev</title>
+</head>
+
+<body style="font-family: 'Roboto', sans-serif; background-color: #f4f7fb; margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; color: #333;">
+    <header style="background-color: #3a5a99; color: white; text-align: center; padding: 20px 0; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        <h1 style="font-size: 2.5rem; font-weight: 600;">Bem-vindo à minha página!</h1>
+    </header>
+
+    <section style="background-color: white; margin: 20px auto; width: 90%; max-width: 900px; padding: 30px 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src="https://media.tenor.com/OcXTdXXNexsAAAAj/fazueli-faz-o-ele.gif" alt="Minha Foto" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid #3a5a99; object-fit: cover; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease; display: inline-block;">
+        </div>
+
+        <h2 style="text-align: center; color: #333; font-size: 1.8rem; margin-bottom: 20px;">Informações Pessoais</h2>
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+            <tr>
+                <th style="background-color: #3a5a99; color: white; padding: 12px; text-align: left; font-size: 1.1rem;">Campo</th>
+                <th style="background-color: #3a5a99; color: white; padding: 12px; text-align: left; font-size: 1.1rem;">Informação</th>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd; font-size: 1.1rem;">Nome</td>
+                <td style="padding: 12px; border: 1px solid #ddd;">Renato Russo</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd; font-size: 1.1rem;">Idade</td>
+                <td style="padding: 12px; border: 1px solid #ddd;">35 anos</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd; font-size: 1.1rem;">Cidade</td>
+                <td style="padding: 12px; border: 1px solid #ddd;">Minas Gerais</td>
+            </tr>
+        </table>
+    </section>
+
+    <footer style="text-align: center; padding: 20px; background-color: #3a5a99; color: white; margin-top: auto; font-size: 1.1rem;">
+        <p>&copy; 2025 Cauã Dev</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var btnEnviar = document.getElementById('btnEnviar');
+            var popup = document.getElementById('popup');
+            var closePopup = document.getElementById('closePopup');
+
+            btnEnviar.addEventListener('click', function() {
+                popup.style.display = 'flex'; 
+                setTimeout(function() {
+                    window.location.href = 'noticias.html'; 
+                }, 5000);  
+            });
+
+            closePopup.addEventListener('click', function() {
+                popup.style.display = 'none'; 
+            });
+        });
+    </script>
+</body>
+</html>
