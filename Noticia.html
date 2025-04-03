@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Notícias</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e3f2fd;
+            text-align: center;
+        }
+        h2 {
+            color: #01579b;
+        }
+        .container {
+            width: 90%;
+            max-width: 850px;
+            margin: auto;
+        }
+        .noticia, .manchete {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+        .manchetes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .manchete {
+            flex: 1;
+            min-width: 45%;
+        }
+        img {
+            width: 120px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+        .texto {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Destaques do Dia</h2>
+        <div class="noticia" id="noticia1">
+            <img id="img1" src="https://source.unsplash.com/200x150/?city,night" alt="Imagem da notícia">
+            <div class="texto">
+                <h3 id="titulo1"></h3>
+                <p id="descricao1"></p>
+            </div>
+        </div>
+        <div class="noticia" id="noticia2">
+            <img id="img2" src="https://source.unsplash.com/200x150/?technology" alt="Imagem da notícia">
+            <div class="texto">
+                <h3 id="titulo2"></h3>
+                <p id="descricao2"></p>
+            </div>
+        </div>
+        <h2>Principais Manchetes</h2>
+        <div class="manchetes">
+            <div class="manchete" id="manchete1">
+                <img id="imgManchete1" src="https://source.unsplash.com/200x150/?business" alt="Imagem da manchete">
+                <div class="texto">
+                    <b id="tituloManchete1"></b>
+                </div>
+            </div>
+            <div class="manchete" id="manchete2">
+                <img id="imgManchete2" src="https://source.unsplash.com/200x150/?news" alt="Imagem da manchete">
+                <div class="texto">
+                    <b id="tituloManchete2"></b>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const noticias = [
+            {
+                titulo: "Cidades inteligentes já são realidade no Brasil",
+                descricao: "Projetos de cidades inteligentes estão sendo implantados em diversas regiões, trazendo mais conectividade e eficiência.",
+                manchete: "Brasil avança na criação de cidades inteligentes",
+                imagem: "https://source.unsplash.com/200x150/?smartcity"
+            },
+            {
+                titulo: "Avanços na Inteligência Artificial surpreendem especialistas",
+                descricao: "Novas descobertas no campo da IA estão mudando setores como saúde, finanças e entretenimento.",
+                manchete: "Como a Inteligência Artificial está impactando a sociedade",
+                imagem: "https://source.unsplash.com/200x150/?artificial-intelligence"
+            },
+            {
+                titulo: "Nova descoberta espacial pode mudar a exploração do universo",
+                descricao: "Astrônomos encontraram evidências de um novo tipo de exoplaneta nunca antes visto.",
+                manchete: "Descoberta pode redefinir a exploração espacial",
+                imagem: "https://source.unsplash.com/200x150/?space,galaxy"
+            },
+            {
+                titulo: "Inovações na área da saúde prometem revolucionar tratamentos",
+                descricao: "Tecnologias como impressão 3D e terapia genética estão oferecendo novas esperanças para pacientes.",
+                manchete: "Medicina do futuro: como a tecnologia está transformando a saúde",
+                imagem: "https://source.unsplash.com/200x150/?medicine,tech"
+            },
+            {
+                titulo: "Carros elétricos dominam o mercado e superam vendas de modelos a combustão",
+                descricao: "Com incentivos e avanços na autonomia, veículos elétricos estão se tornando a primeira escolha dos consumidores.",
+                manchete: "Carros elétricos já são maioria em diversos países",
+                imagem: "https://source.unsplash.com/200x150/?electric-car"
+            }
+        ];
+
+        function gerarNoticias() {
+            let indices = [];
+            while (indices.length < 2) {
+                let num = Math.floor(Math.random() * noticias.length);
+                if (!indices.includes(num)) {
+                    indices.push(num);
+                }
+            }
+
+            document.getElementById("titulo1").innerText = noticias[indices[0]].titulo;
+            document.getElementById("descricao1").innerText = noticias[indices[0]].descricao;
+            document.getElementById("img1").src = noticias[indices[0]].imagem;
+
+            document.getElementById("titulo2").innerText = noticias[indices[1]].titulo;
+            document.getElementById("descricao2").innerText = noticias[indices[1]].descricao;
+            document.getElementById("img2").src = noticias[indices[1]].imagem;
+
+            document.getElementById("tituloManchete1").innerText = noticias[indices[0]].manchete;
+            document.getElementById("imgManchete1").src = noticias[indices[0]].imagem;
+
+            document.getElementById("tituloManchete2").innerText = noticias[indices[1]].manchete;
+            document.getElementById("imgManchete2").src = noticias[indices[1]].imagem;
+        }
+
+        setInterval(gerarNoticias, 5000);
+        gerarNoticias();
+    </script>
+</body>
+</html>
